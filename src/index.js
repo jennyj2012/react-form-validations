@@ -19,7 +19,16 @@ const confirmation = (field, values) => {
   }
 }
 
-export const defaultValidators = { presence, confirmation };
+const length = (field, values, minLength = 6) => {
+  const val = values[field];
+  if (typeof val === "string" && val.length < minLength) {
+    return `must be at least ${minLength} characters`;
+  } else {
+    return "";
+  }
+}
+
+export const defaultValidators = { presence, confirmation, length };
 
 export class Form extends Component {
   constructor(props) {
