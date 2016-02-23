@@ -8,6 +8,9 @@ ul.validation-errors > li:before {
   content: "*";
 }
 
-input.validation-error, input.validation-error:focus {
+input.validation-error,
+input.validation-error:focus,
+select.validation-error,
+select.validation-error:focus {
   border-color: #E53935;
 }

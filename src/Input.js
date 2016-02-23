@@ -34,5 +34,5 @@ export class Input extends Component {
 
 Input.propTypes = {
   type: React.PropTypes.string.isRequired,
-  name: React.PropTypes.string,
+  name: React.PropTypes.string
 };
