@@ -48,7 +48,7 @@ Where message is a string and a blank string indicates no error.
 ```
 
 ## Styling
-Errors are displayed at the top of the form in `ul.validation-errors`.
+Errors are displayed at the top of the form in `ul.validation-errors`.  
 Inputs with errors are given the class `.validation-error`.  
 See the css folder for an example.  
 
@@ -58,6 +58,8 @@ If you are going to wrap your Input with an element it too needs to pass these d
 `FormField` does this by wrapping children in a div:
 
 ```javascript
+import { Form, FormField, Input } from 'react-form-validations';
+
 <FormField className="checkbox-field">
   <label htmlFor="remember-me">Remember me</label>
   <Input type="checkbox" name="remember_me" id="remember-me" />
