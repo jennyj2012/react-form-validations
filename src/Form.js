@@ -1,5 +1,28 @@
 import React, { Component } from 'react';
-import * as defaultValidators from './validators';
+
+const defaultValidators = {
+  presence: (value) => {
+    if (typeof value === "undefined" || (typeof value === "string" && !value)) {
+      return "can't be blank";
+    }
+    return "";
+  },
+
+  confirmation: (value, values, field) => {
+    const confirmVal = values[`${field}_confirmation`];
+    if (value !== confirmVal) {
+      return "must match confirmation";
+    }
+    return "";
+  },
+
+  length: (value) => {
+    if (typeof value === "string" && value.length < 6) {
+      return `must be at least 6 characters`;
+    }
+    return "";
+  }
+};
 
 const formatField = (field) => {
   return field.replace(/_/g, " ").replace(/[A-Z]/g, letter => {
